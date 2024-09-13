@@ -15,9 +15,9 @@ import LogoGit from "/public/images/logos/icon-git.svg";
 
 import LogoAsset from "/public/images/logos/asset.webp";
 import LogoIntercom from "/public/images/logos/Intercom-Logo-1.png";
-import ProjectFiskil from "/public/images/project-fiskil.png";
-import ProjectWingie from "/public/images/project-wingie.png";
-import ProjectPepehousing from "/public/images/project-pepehousing.png";
+import ProjectPOSH from "/public/images/projects/posh.png";
+import ProjectChatUP from "/public/images/projects/chatup.png";
+import ProjectAirMAK from "/public/images/projects/airmak.png";
 
 import AvatarKrisztian from "/public/images/avatar-krisztian.png";
 import AvatarEugen from "/public/images/avatar-eugen.png";
@@ -28,6 +28,7 @@ import {
   ProjectDetails,
   TechDetails,
   TestimonialDetails,
+  CourceDetails,
 } from "@/lib/types";
 
 export const EXTERNAL_LINKS = {
@@ -138,6 +139,31 @@ export const TECHNOLOGIES: TechDetails[] = [
     url: "https://grafana.com/",
   },
 ];
+
+export const COURCES: CourceDetails[] = [
+  {
+    id: "cloud",
+    name: "[NEW] Master Microservices with SpringBoot,Docker,Kubernetes",
+    institution: "Udemy",
+    duration: "40 hour",
+    progress: 50,
+    skills: [
+      "Spring Cloud",
+      "Docker",
+      "Kibernetes",
+      "Microservice Architecture",
+    ],
+  },
+  {
+    id: "design-pattern",
+    name: "Ultimate Design Patterns",
+    institution: "Udemy",
+    duration: "11 hour",
+    progress: 15,
+    skills: ["Solid Principles", "Design Patterns"],
+  },
+];
+
 export const EXPERIENCES: ExperienceDetails[] = [
   {
     logo: LogoIntercom,
@@ -168,49 +194,51 @@ export const EXPERIENCES: ExperienceDetails[] = [
 
 export const PROJECTS: ProjectDetails[] = [
   {
-    name: "ChatUP",
+    name: "AirMAK - Property Community Platform",
     description:
-      "A platform for comparing and finding affordable flights, as well as booking and purchasing tickets safely and easily in a few simple clicks.",
-    url: "https://www.wingie.com",
-    previewImage: ProjectWingie,
-    technologies: ["JavaX", "Java", "JDBC"],
-  },
-  {
-    name: "Fiskil",
-    description:
-      "A platform for accessing real-time open banking and energy data to help you grow your business, backed with scalable back-end infrastructure.",
-    url: "https://fiskil.com.au",
-    previewImage: ProjectFiskil,
+      "Developed as part of the ITI 9-Month program, AirMAK is a comprehensive platform for renting flats or rooms in Egypt. Users can browse through hundreds of verified listings, and complete secure online payments. The platform streamlines the entire rental process, from search to occupancy.",
+    url: "https://github.com/karimtismail/ITI-Graduation-Project",
+    previewImage: ProjectAirMAK,
     technologies: [
-      "React",
-      "Next.js",
-      "Typescript",
-      "Tailwindcss",
-      "Material UI",
-      "Redux Toolkit",
-      "React Query",
-      "Express.js",
-      "PostgreSQL",
-      "Firebase",
-      "AWS Amplify",
-      "Cypress",
-      "Storybook",
+      "Spring Boot",
+      "Hibernate",
+      "MySql",
+      "Angular",
+      "TypeScript",
+      "Google Maps",
+      "Google Authentication",
+      "Stripe API",
     ],
   },
   {
-    name: "Pepehousing",
+    name: "ChatUP - Desktop Messaging Application",
     description:
-      "A platform for renting a flat or room in Poland. You may browse hundreds of verified deals, contact the vendor, and pay online in a simple and secure manner.",
-    url: "https://pepehousing.com",
-    previewImage: ProjectPepehousing,
+      "ChatUP, another significant project from the ITI 9-Month curriculum, is a sophisticated desktop messaging application. This Java-based project demonstrates proficiency in desktop application development and database management. It features real-time messaging, user authentication, and message persistence, showcasing practical application of core Java concepts.",
+    url: "https://github.com/karimtismail/ChatUP",
+    previewImage: ProjectChatUP,
+    technologies: ["JavaX", "Java", "JDBC"],
+  },
+  {
+    name: "POSH - Auto Parts E-Commerce",
+    description:
+      "POSH represents a culmination of web development skills acquired during the ITI 9-Month program. This comprehensive e-commerce platform for auto parts leverages a wide array of technologies, from Jakarta EE to front-end frameworks. The project highlights expertise in building scalable, database-driven web applications with features like product cataloging, user authentication, and secure transactions.",
+    url: "https://github.com/karimtismail/POSH-WebApplication",
+    previewImage: ProjectPOSH,
     technologies: [
-      "React",
-      "Next.js",
-      "Typescript",
-      "Tailwindcss",
-      "Redux Toolkit",
-      "React Query",
-      "Storybook",
+      "Java",
+      "Apache Tomcat 10.1",
+      "Jakarta Persistence (Hibernate)",
+      "MySQL",
+      "Jakarta Server Pages",
+      "Jakarta Servlet",
+      "Jakarta Standard Tag Library",
+      "Ajax",
+      "JSON",
+      "Bean Validation (Hibernate Validator)",
+      "Jakarta Mail",
+      "HTML5",
+      "JavaScript",
+      "JQuery",
     ],
   },
 ];

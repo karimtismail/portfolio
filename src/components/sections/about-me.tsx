@@ -82,8 +82,7 @@ const AboutMeSection = () => {
                 Bachelor’s in Education (Science Department)
               </Typography>
               <Typography component="li" className="whitespace-nowrap">
-                Completed the 9-month Java Track at the Information Technology
-                Institute (ITI)
+                Completed intensive 9-month Java specialization at ITI
               </Typography>
               <Typography component="li" className="whitespace-nowrap">
                 Currently pursuing a Diploma in Computer Science

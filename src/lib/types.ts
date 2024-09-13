@@ -32,3 +32,12 @@ export type TestimonialDetails = {
   testimonial: string;
   title: string;
 };
+
+export type CourceDetails = {
+  id: string,
+  name: string,
+  institution: string,
+  duration: string,
+  progress: number,
+  skills: string[];
+}
