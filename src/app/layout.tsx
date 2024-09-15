@@ -1,7 +1,7 @@
 import Script from "next/script";
 import { Inter } from "next/font/google";
 import { Metadata } from "next";
-import type { Viewport } from 'next'
+import type { Viewport } from "next";
 
 import "./globals.css";
 import Header from "@/components/layout/header";
@@ -19,8 +19,8 @@ export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "white" },
     { media: "(prefers-color-scheme: dark)", color: "black" },
-  ]
-}
+  ],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(url),
