@@ -6,7 +6,10 @@ const DownloadCV = () => {
   return (
     <Button
       onClick={() =>
-        window?.open("/files/Karim Taha - Software Engineer - CV.pdf", "_blank")
+        window?.open(
+          "${basePath}/files/Karim Taha - Software Engineer - CV.pdf",
+          "_blank"
+        )
       }
     >
       Download CV
