@@ -67,9 +67,9 @@ const googleAnalyticsId = process.env.GOOGLE_ANALYTICS_ID;
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en" className="!scroll-smooth" suppressHydrationWarning>
       {googleAnalyticsId ? (

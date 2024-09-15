@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import FullPoseImage from "/public/images/my-image.jpg";
+import FullPoseImage from "/public/images/about-me.jpg";
 import Tag from "@/components/data-display/tag";
 import Container from "@/components/layout/container";
 import Typography from "@/components/general/typography";

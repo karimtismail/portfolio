@@ -12,6 +12,10 @@ const nextConfig = {
     experimental: {
         appDir: true,       // Enable experimental app directory feature
     },
+    env: {
+        GOOGLE_ANALYTICS_ID: 'G-9X5BM8F1CD',
+        BASE_PATH: isProd ? '/portfolio' : '',
+    },
 };
 
 module.exports = nextConfig;
