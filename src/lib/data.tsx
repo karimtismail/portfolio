@@ -12,6 +12,11 @@ import LogoPrometheus from "/public/images/logos/Prometheus.svg";
 import LogoGrafana from "/public/images/logos/Grafana_icon.svg";
 import LogoPostgreSQL from "/public/images/logos/icon-postgresql.svg";
 import LogoGit from "/public/images/logos/icon-git.svg";
+import LogoTempo from "/public/images/logos/grafana-tempo.svg";
+import LogoLoki from "/public/images/logos/logo-loki.svg";
+import LogoZipkin from "/public/images/logos/zipkin.png";
+import LogoJaeger from "/public/images/logos/jaeger-icon-reverse-color.svg";
+import LogoKubernetes from "/public/images/logos/kubernetes.png";
 
 import LogoAsset from "/public/images/logos/asset.webp";
 import LogoIntercom from "/public/images/logos/Intercom-Logo-1.png";
@@ -77,7 +82,8 @@ export const SOCIAL_LINKS = [
     url: "https://www.facebook.com/karimTismail",
   },
 ];
-export const TECHNOLOGIES: TechDetails[] = [
+
+export const GOOD_TECHNOLOGIES: TechDetails[] = [
   {
     label: "Java",
     logo: LogoJava,
@@ -114,16 +120,6 @@ export const TECHNOLOGIES: TechDetails[] = [
     url: "https://www.mysql.com/",
   },
   {
-    label: "Angular",
-    logo: LogoAngular,
-    url: "https://angular.dev/",
-  },
-  {
-    label: "NextJs",
-    logo: LogoNextJs,
-    url: "https://nextjs.org/",
-  },
-  {
     label: "Git",
     logo: LogoGit,
     url: "https://git-scm.com/",
@@ -137,6 +133,44 @@ export const TECHNOLOGIES: TechDetails[] = [
     label: "Grafana",
     logo: LogoGrafana,
     url: "https://grafana.com/",
+  },
+  {
+    label: "Tempo",
+    logo: LogoTempo,
+    url: "https://grafana.com/oss/tempo/",
+  },
+  {
+    label: "Loki",
+    logo: LogoLoki,
+    url: "https://grafana.com/oss/loki/",
+  },
+  {
+    label: "Zipkin",
+    logo: LogoZipkin,
+    url: "https://zipkin.io/",
+  },
+  {
+    label: "Jaeger",
+    logo: LogoJaeger,
+    url: "https://www.jaegertracing.io/",
+  },
+];
+
+export const FAMILIAR_TECHNOLOGIES: TechDetails[] = [
+  {
+    label: "Angular",
+    logo: LogoAngular,
+    url: "https://angular.dev/",
+  },
+  {
+    label: "NextJs",
+    logo: LogoNextJs,
+    url: "https://nextjs.org/",
+  },
+  {
+    label: "Kubernetes",
+    logo: LogoKubernetes,
+    url: "https://kubernetes.io/",
   },
 ];
 
