@@ -95,7 +95,7 @@ const CourseSection = () => {
 
         <div
           ref={scrollRef}
-          className="overflow-x-scroll scrollbar-hide whitespace-nowrap flex-grow mx-4"
+          className="overflow-x-auto whitespace-nowrap flex-grow mx-4 scrollbar-hide"
         >
           <div className="flex flex-row gap-4 sm:gap-6">
             {COURCES?.map((course) => (

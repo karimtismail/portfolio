@@ -55,7 +55,22 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.scrollbar-hide': {
+          /* Firefox */
+          'scrollbar-width': 'none',
+          /* Internet Explorer 10+ */
+          '-ms-overflow-style': 'none',
+          /* WebKit (Chrome, Safari, etc.) */
+          '&::-webkit-scrollbar': {
+            display: 'none',
+          },
+        },
+      });
+    },
+  ],
 };
 
 // Ref :: https://twitter.com/steventey/status/1677339375645126659
