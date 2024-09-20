@@ -84,9 +84,10 @@ const CourseSection = () => {
       </div>
 
       <div className="relative py-4 flex items-center">
+        {/* Conditional rendering for buttons based on screen size */}
         <button
           onClick={() => handleScroll("left")}
-          className="sm:flex bg-gradient-to-r from-gray-300 to-gray-400 rounded-full p-3 shadow-lg hover:from-gray-400 hover:to-gray-500 transition-colors duration-300 flex items-center justify-center z-10"
+          className="hidden sm:flex bg-gradient-to-r from-gray-300 to-gray-400 rounded-full p-3 shadow-lg hover:from-gray-400 hover:to-gray-500 transition-colors duration-300 items-center justify-center z-10"
           aria-label="Scroll Left"
         >
           <FaChevronLeft className="text-gray-700 text-xl" />
@@ -105,7 +106,7 @@ const CourseSection = () => {
 
         <button
           onClick={() => handleScroll("right")}
-          className="sm:flex bg-gradient-to-r from-gray-300 to-gray-400 rounded-full p-3 shadow-lg hover:from-gray-400 hover:to-gray-500 transition-colors duration-300 flex items-center justify-center z-10"
+          className="hidden sm:flex bg-gradient-to-r from-gray-300 to-gray-400 rounded-full p-3 shadow-lg hover:from-gray-400 hover:to-gray-500 transition-colors duration-300 items-center justify-center z-10"
           aria-label="Scroll Right"
         >
           <FaChevronRight className="text-gray-700 text-xl" />
