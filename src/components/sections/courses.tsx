@@ -21,25 +21,32 @@ const Progress = memo(
 );
 
 Progress.displayName = "Progress";
+
 const CourseCard = memo(({ course }: { course: CourceDetailsType }) => (
-  <Card className="flex flex-col w-80 flex-shrink-0 bg-white p-6 rounded-lg shadow-lg border border-gray-200 transition-transform transform hover:scale-105 hover:shadow-2xl hover:bg-blue-50">
+  <Card className="flex flex-col w-full sm:w-72 flex-shrink-0 bg-white p-4 sm:p-6 rounded-lg shadow-lg border border-gray-200 transition-transform transform hover:scale-105 hover:shadow-2xl hover:bg-blue-50">
     <div className="flex flex-col h-full justify-between">
       <div>
-        <Typography variant="h4" className="text-gray-800 mb-2 font-semibold break-words whitespace-normal">
+        <Typography
+          variant="h4"
+          className="text-gray-800 mb-2 font-semibold text-lg sm:text-xl break-words whitespace-normal"
+        >
           {course.name}
         </Typography>
-        <Typography className="text-gray-600 mb-2 break-words whitespace-normal">
+        <Typography className="text-gray-600 mb-2 text-sm sm:text-base break-words whitespace-normal">
           {course.institution} • {course.duration}
         </Typography>
       </div>
       <div className="mt-4">
         <Progress value={course.progress} className="mb-2" />
-        <Typography className="text-sm text-gray-500 break-words whitespace-normal">
+        <Typography className="text-xs sm:text-sm text-gray-500 break-words whitespace-normal">
           {course.progress}% Complete
         </Typography>
       </div>
       <div>
-        <Typography variant="h5" className="text-gray-800 mb-2 font-semibold break-words whitespace-normal">
+        <Typography
+          variant="h5"
+          className="text-gray-800 mb-2 font-semibold text-sm sm:text-base break-words whitespace-normal"
+        >
           Skills Gained:
         </Typography>
         <div className="flex flex-wrap gap-2">
@@ -52,7 +59,7 @@ const CourseCard = memo(({ course }: { course: CourceDetailsType }) => (
   </Card>
 ));
 
-CourseCard.displayName = 'CourseCard';
+CourseCard.displayName = "CourseCard";
 
 const CourseSection = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -79,14 +86,17 @@ const CourseSection = () => {
       <div className="relative py-4 flex items-center">
         <button
           onClick={() => handleScroll("left")}
-          className="bg-gradient-to-r from-gray-300 to-gray-400 rounded-full p-3 shadow-lg hover:from-gray-400 hover:to-gray-500 transition-colors duration-300 flex items-center justify-center z-10"
+          className="hidden sm:flex bg-gradient-to-r from-gray-300 to-gray-400 rounded-full p-3 shadow-lg hover:from-gray-400 hover:to-gray-500 transition-colors duration-300 flex items-center justify-center z-10"
           aria-label="Scroll Left"
         >
           <FaChevronLeft className="text-gray-700 text-xl" />
         </button>
 
-        <div ref={scrollRef} className="overflow-hidden whitespace-nowrap flex-grow mx-4">
-          <div className="flex flex-row gap-8">
+        <div
+          ref={scrollRef}
+          className="overflow-hidden whitespace-nowrap flex-grow mx-4 scrollbar-hide"
+        >
+          <div className="flex flex-row gap-4 sm:gap-6">
             {COURCES?.map((course) => (
               <CourseCard key={course.id} course={course} />
             ))}
@@ -95,7 +105,7 @@ const CourseSection = () => {
 
         <button
           onClick={() => handleScroll("right")}
-          className="bg-gradient-to-r from-gray-300 to-gray-400 rounded-full p-3 shadow-lg hover:from-gray-400 hover:to-gray-500 transition-colors duration-300 flex items-center justify-center z-10"
+          className="hidden sm:flex bg-gradient-to-r from-gray-300 to-gray-400 rounded-full p-3 shadow-lg hover:from-gray-400 hover:to-gray-500 transition-colors duration-300 flex items-center justify-center z-10"
           aria-label="Scroll Right"
         >
           <FaChevronRight className="text-gray-700 text-xl" />
