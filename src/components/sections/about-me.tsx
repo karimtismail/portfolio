@@ -78,21 +78,17 @@ const AboutMeSection = () => {
           <Typography>A few quick facts about me.</Typography>{" "}
           <div className="flex flex-col gap-2 md:flex-row md:gap-6">
             <ul className="flex list-inside list-disc flex-col gap-2">
-              <Typography component="li" className="whitespace-nowrap">
+              <Typography component="li">
                 Bachelor’s in Education (Science Department)
               </Typography>
-              <Typography component="li" className="whitespace-nowrap">
+              <Typography component="li">
                 Completed intensive 9-month Java specialization at ITI
               </Typography>
-              <Typography component="li" className="whitespace-nowrap">
+              <Typography component="li">
                 Currently pursuing a Diploma in Computer Science
               </Typography>
-              <Typography component="li" className="whitespace-nowrap">
-                Lifelong learner
-              </Typography>
-              <Typography component="li" className="whitespace-nowrap">
-                Aspiring indie developer
-              </Typography>
+              <Typography component="li">Lifelong learner</Typography>
+              <Typography component="li">Aspiring indie developer</Typography>
             </ul>
           </div>
           <Typography>
