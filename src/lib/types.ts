@@ -19,10 +19,11 @@ export type ExperienceDetails = {
 };
 
 export type ProjectDetails = {
+  category: string;
   name: string;
   description: string;
-  url: string;
-  previewImage: string | StaticImageData;
+  url?: string;
+  previewImage?: string | StaticImageData;
   technologies: string[];
 };
 

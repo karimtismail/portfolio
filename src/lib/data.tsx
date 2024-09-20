@@ -227,10 +227,12 @@ export const EXPERIENCES: ExperienceDetails[] = [
 ];
 
 export const PROJECTS: ProjectDetails[] = [
+  // ITI
   {
+    category: "ITI",
     name: "AirMAK - Property Community Platform",
     description:
-      "Developed as part of the ITI 9-Month program, AirMAK is a comprehensive platform for renting flats or rooms in Egypt. Users can browse through hundreds of verified listings, and complete secure online payments. The platform streamlines the entire rental process, from search to occupancy.",
+      "Developed as part of the ITI 9-Month program, AirMAK is a comprehensive platform for renting flats or rooms in Egypt. Users can browse through hundreds of verified listings and complete secure online payments. The platform streamlines the entire rental process, from search to occupancy.",
     url: "https://github.com/karimtismail/ITI-Graduation-Project",
     previewImage: ProjectAirMAK,
     technologies: [
@@ -245,14 +247,16 @@ export const PROJECTS: ProjectDetails[] = [
     ],
   },
   {
+    category: "ITI",
     name: "ChatUP - Desktop Messaging Application",
     description:
-      "ChatUP, another significant project from the ITI 9-Month curriculum, is a sophisticated desktop messaging application. This Java-based project demonstrates proficiency in desktop application development and database management. It features real-time messaging, user authentication, and message persistence, showcasing practical application of core Java concepts.",
+      "ChatUP, another significant project from the ITI 9-Month curriculum, is a sophisticated desktop messaging application. This Java-based project demonstrates proficiency in desktop application development and database management. It features real-time messaging, user authentication, and message persistence, showcasing practical applications of core Java concepts.",
     url: "https://github.com/karimtismail/ChatUP",
     previewImage: ProjectChatUP,
     technologies: ["JavaX", "Java", "JDBC"],
   },
   {
+    category: "ITI",
     name: "POSH - Auto Parts E-Commerce",
     description:
       "POSH represents a culmination of web development skills acquired during the ITI 9-Month program. This comprehensive e-commerce platform for auto parts leverages a wide array of technologies, from Jakarta EE to front-end frameworks. The project highlights expertise in building scalable, database-driven web applications with features like product cataloging, user authentication, and secure transactions.",
@@ -273,6 +277,36 @@ export const PROJECTS: ProjectDetails[] = [
       "HTML5",
       "JavaScript",
       "JQuery",
+    ],
+  },
+  // Intercom Enterprise
+  {
+    category: "Intercom Enterprise",
+    name: "Public Prosecution Office Digitalization",
+    description:
+      "This project aimed to revolutionize the archival process by converting traditional paper-based records into a fully digital system. This transition significantly improved accessibility for users and enhanced operational efficiency across departments, enabling quicker retrieval and management of case files.",
+    technologies: [
+      "Java",
+      "Spring Boot",
+      "Spring Security",
+      "Oracle WebLogic Server",
+      "Oracle Database",
+      "JdbcTemplate",
+      "OpenText",
+    ],
+  },
+  {
+    category: "Intercom Enterprise",
+    name: "Family Prosecution Online Document Management System",
+    description:
+      "Developed to streamline document management within family prosecution services, this comprehensive system integrates seamlessly with key national services, including major Internet Service Providers (ISPs), Egypt Post, and E-Finance. It enhances the accessibility and security of family-related documents, facilitating efficient service delivery and collaboration across various platforms.",
+    technologies: [
+      "Java",
+      "Spring Boot",
+      "Spring Security",
+      "Microsoft SQL Server",
+      "JdbcTemplate",
+      "Integration with EgyPost, ISPs, and E-Finance",
     ],
   },
 ];

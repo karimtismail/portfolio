@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";
+import DefaultImage from "/public/images/default-image.png";
 
 import { ProjectDetails as ProjectDetailsType } from "@/lib/types";
 import { mergeClasses } from "@/lib/utils";
@@ -7,12 +8,20 @@ import Typography from "@/components/general/typography";
 import Link from "@/components/navigation/link";
 import Tag from "@/components/data-display/tag";
 import Card from "@/components/layout/card";
+import type { StaticImageData } from "next/image"; // Add this import
 
 type ProjectDetailsProps = ProjectDetailsType & {
   layoutType: "default" | "reverse";
+  url?: string;
+  previewImage?: string | StaticImageData; // Ensure this includes StaticImageData
+  category: string;
+  name: string;
+  description: string;
+  technologies: string[];
 };
 
 const ProjectDetails = ({
+  category,
   name,
   description,
   technologies,
@@ -20,6 +29,17 @@ const ProjectDetails = ({
   previewImage,
   layoutType = "default",
 }: ProjectDetailsProps) => {
+  const imageSrc = previewImage || DefaultImage;
+  const imageAlt = previewImage ? `${name} preview` : "Default Image";
+
+  const linkElement = url ? (
+    <Link noCustomization href={url} externalLink>
+      <Image src={imageSrc} alt={imageAlt} />
+    </Link>
+  ) : (
+    <Image src={imageSrc} alt={imageAlt} />
+  );
+
   return (
     <Card className="mx-auto flex w-full max-w-6xl flex-col md:flex-row">
       {/* Image */}
@@ -31,17 +51,9 @@ const ProjectDetails = ({
             : "md:order-last md:rounded-r-xl md:border-l"
         )}
       >
-        <Link noCustomization href={url} externalLink>
-          <Image
-            src={previewImage}
-            alt={`${name} preview`}
-            className="rounded-xl shadow-lg transition-transform duration-500 md:hover:scale-105"
-            style={{ objectFit: "cover" }}
-          />
-        </Link>
+        {linkElement}
       </div>
 
-      {/* Content */}
       <div
         className={mergeClasses(
           "flex flex-col gap-6 p-8 md:w-1/2 lg:p-12",
@@ -57,14 +69,16 @@ const ProjectDetails = ({
             <Tag key={index} label={technology} />
           ))}
         </div>
-        <Link
-          href={url}
-          noCustomization
-          className="self-start rounded-lg p-1.5 hover:bg-gray-50 [&_svg]:stroke-gray-500"
-          externalLink
-        >
-          <ExternalLink />
-        </Link>
+        {url && (
+          <Link
+            href={url}
+            noCustomization
+            className="self-start rounded-lg p-1.5 hover:bg-gray-50 [&_svg]:stroke-gray-500"
+            externalLink
+          >
+            <ExternalLink />
+          </Link>
+        )}
       </div>
     </Card>
   );
