@@ -23,7 +23,7 @@ const Progress = memo(
 Progress.displayName = "Progress";
 
 const CourseCard = memo(({ course }: { course: CourceDetailsType }) => (
-  <Card className="flex flex-col w-full sm:w-72 flex-shrink-0 bg-white p-4 sm:p-6 rounded-lg shadow-lg border border-gray-200 transition-transform transform hover:scale-105 hover:shadow-2xl hover:bg-blue-50">
+  <Card className="flex flex-col w-64 sm:w-72 flex-shrink-0 bg-white p-4 sm:p-6 rounded-lg shadow-lg border border-gray-200 transition-transform transform hover:scale-105 hover:shadow-2xl hover:bg-blue-50">
     <div className="flex flex-col h-full justify-between">
       <div>
         <Typography
@@ -86,7 +86,7 @@ const CourseSection = () => {
       <div className="relative py-4 flex items-center">
         <button
           onClick={() => handleScroll("left")}
-          className="hidden sm:flex bg-gradient-to-r from-gray-300 to-gray-400 rounded-full p-3 shadow-lg hover:from-gray-400 hover:to-gray-500 transition-colors duration-300 flex items-center justify-center z-10"
+          className="sm:flex bg-gradient-to-r from-gray-300 to-gray-400 rounded-full p-3 shadow-lg hover:from-gray-400 hover:to-gray-500 transition-colors duration-300 flex items-center justify-center z-10"
           aria-label="Scroll Left"
         >
           <FaChevronLeft className="text-gray-700 text-xl" />
@@ -94,7 +94,7 @@ const CourseSection = () => {
 
         <div
           ref={scrollRef}
-          className="overflow-hidden whitespace-nowrap flex-grow mx-4 scrollbar-hide"
+          className="overflow-x-scroll scrollbar-hide whitespace-nowrap flex-grow mx-4"
         >
           <div className="flex flex-row gap-4 sm:gap-6">
             {COURCES?.map((course) => (
@@ -105,7 +105,7 @@ const CourseSection = () => {
 
         <button
           onClick={() => handleScroll("right")}
-          className="hidden sm:flex bg-gradient-to-r from-gray-300 to-gray-400 rounded-full p-3 shadow-lg hover:from-gray-400 hover:to-gray-500 transition-colors duration-300 flex items-center justify-center z-10"
+          className="sm:flex bg-gradient-to-r from-gray-300 to-gray-400 rounded-full p-3 shadow-lg hover:from-gray-400 hover:to-gray-500 transition-colors duration-300 flex items-center justify-center z-10"
           aria-label="Scroll Right"
         >
           <FaChevronRight className="text-gray-700 text-xl" />
