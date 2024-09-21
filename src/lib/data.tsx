@@ -184,7 +184,7 @@ export const COURCES: CourceDetails[] = [
     name: "[NEW] Master Microservices with SpringBoot,Docker,Kubernetes",
     institution: "Udemy",
     duration: "40 hour",
-    progress: 50,
+    progress: Math.round((8 / 19) * 100),
     skills: [
       "Spring Cloud",
       "Docker",
