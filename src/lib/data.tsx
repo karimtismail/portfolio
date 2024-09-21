@@ -38,7 +38,7 @@ import {
 
 export const EXTERNAL_LINKS = {
   GITHUB: "https://github.com/karimtismail",
-  GITHUB_REPO: "https://github.com/karimtismail/My-Profile",
+  GITHUB_REPO: "https://github.com/karimtismail/portfolio",
   LINKEDIN: "https://linkedin.com/in/karimtismail",
 };
 
@@ -52,7 +52,11 @@ export const NAV_LINKS = [
     href: "#experience",
   },
   {
-    label: "Work",
+    label: "Skills",
+    href: "#skills",
+  },
+  {
+    label: "Projects",
     href: "#work",
   },
   // {
@@ -201,9 +205,9 @@ export const COURCES: CourceDetails[] = [
 export const EXPERIENCES: ExperienceDetails[] = [
   {
     logo: LogoIntercom,
-    logoAlt: "Intercom logo",
+    logoAlt: "Intercom logo preview",
     position: "Backend Engineer",
-    startDate: new Date(2023, 11),
+    startDate: new Date(2023, 10),
     currentlyWorkHere: true,
     summary: [
       "Collaborating with cross-functional teams to deliver robust backend solutions for prosecution-related digital services.",
@@ -215,10 +219,10 @@ export const EXPERIENCES: ExperienceDetails[] = [
   {
     logo: LogoAsset,
     darkModeLogo: LogoAsset,
-    logoAlt: "Asset logo",
+    logoAlt: "Asset logo preview",
     position: "Software Developer",
-    startDate: new Date(2023, 8),
-    endDate: new Date(2023, 11),
+    startDate: new Date(2023, 7),
+    endDate: new Date(2023, 10),
     summary: [
       "Collaborated with cross-functional teams to gather requirements and meet project deliverables:",
       "Worked with technologies such as Fiorano middleware, Message Queue, Middleware, ESB, Java Message Service (JMS), RESTful Web-Services, SOAP.",
