@@ -40,5 +40,6 @@ export type CourceDetails = {
   institution: string,
   duration: string,
   progress: number,
-  skills: string[];
+  skills: string[],
+  status: "future" | "current" | "completed";
 }

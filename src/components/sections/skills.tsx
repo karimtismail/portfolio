@@ -1,5 +1,4 @@
-import { GOOD_TECHNOLOGIES } from "@/lib/data";
-import { FAMILIAR_TECHNOLOGIES } from "@/lib/data";
+import { GOOD_TECHNOLOGIES, FAMILIAR_TECHNOLOGIES } from "@/lib/data";
 import Tag from "@/components/data-display/tag";
 import TechDetails from "@/components/data-display/tech-details";
 import Typography from "@/components/general/typography";

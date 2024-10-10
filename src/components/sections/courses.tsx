@@ -1,6 +1,6 @@
-"use client"; // Ensure this is at the top
+"use client";
 
-import React, { useRef, memo } from "react";
+import React, { useRef, memo, useState } from "react";
 import Typography from "@/components/general/typography";
 import Container from "@/components/layout/container";
 import Card from "@/components/layout/card";
@@ -9,6 +9,7 @@ import { CourceDetails as CourceDetailsType } from "@/lib/types";
 import { COURCES } from "@/lib/data";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
+// Memoized Progress component
 const Progress = memo(
   ({ value, className }: { value: number; className?: string }) => (
     <div className={`w-full bg-gray-200 rounded-full h-2.5 ${className}`}>
@@ -22,8 +23,14 @@ const Progress = memo(
 
 Progress.displayName = "Progress";
 
+// Memoized CourseCard component
 const CourseCard = memo(({ course }: { course: CourceDetailsType }) => (
-  <Card className="flex flex-col w-64 sm:w-72 flex-shrink-0 bg-white p-4 rounded-lg shadow-md border border-gray-200 transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-blue-50 mx-2 my-2">
+  <Card
+    className="flex flex-col w-64 sm:w-72 flex-shrink-0 p-4 mx-2 my-2 transition-transform transform hover:scale-105"
+    variant="elevated"
+    status={course.status}
+    shape="rounded"
+  >
     <div className="flex flex-col h-full justify-between">
       <div>
         <Typography
@@ -36,12 +43,14 @@ const CourseCard = memo(({ course }: { course: CourceDetailsType }) => (
           {course.institution} • {course.duration}
         </Typography>
       </div>
+
       <div className="mt-2">
         <Progress value={course.progress} className="mb-1" />
         <Typography className="text-xs text-gray-500 break-words whitespace-normal">
           {course.progress}% Complete
         </Typography>
       </div>
+
       <div>
         <Typography
           variant="h5"
@@ -63,6 +72,15 @@ CourseCard.displayName = "CourseCard";
 
 const CourseSection = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [selectedStatus, setSelectedStatus] = useState("All");
+
+  const statuses = ["All", "Future", "Current", "Completed"];
+
+  // Filter courses based on the selected status
+  const filteredCourses = COURCES.filter((course) => {
+    if (selectedStatus === "All") return true;
+    return course.status === selectedStatus.toLowerCase();
+  });
 
   const handleScroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
@@ -83,6 +101,19 @@ const CourseSection = () => {
         </Typography>
       </div>
 
+      {/* Tab Buttons */}
+      <div className="flex justify-center gap-4 mb-4">
+        {statuses.map((status) => (
+          <button
+            key={status}
+            onClick={() => setSelectedStatus(status)}
+            className={`py-2 px-4 rounded ${selectedStatus === status ? "bg-gray-200" : "bg-gray-100"}`}
+          >
+            {status}
+          </button>
+        ))}
+      </div>
+
       <div className="relative py-4 flex items-center">
         <button
           onClick={() => handleScroll("left")}
@@ -97,7 +128,7 @@ const CourseSection = () => {
           className="overflow-x-auto whitespace-nowrap flex-grow mx-4 scrollbar-hide"
         >
           <div className="flex flex-row gap-4 sm:gap-6">
-            {COURCES?.map((course) => (
+            {filteredCourses?.map((course) => (
               <CourseCard key={course.id} course={course} />
             ))}
           </div>
