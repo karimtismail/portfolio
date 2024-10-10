@@ -23,33 +23,33 @@ const Progress = memo(
 Progress.displayName = "Progress";
 
 const CourseCard = memo(({ course }: { course: CourceDetailsType }) => (
-  <Card className="flex flex-col w-64 sm:w-72 flex-shrink-0 bg-white p-4 sm:p-6 rounded-lg shadow-lg border border-gray-200 transition-transform transform hover:scale-105 hover:shadow-2xl hover:bg-blue-50">
+  <Card className="flex flex-col w-64 sm:w-72 flex-shrink-0 bg-white p-4 rounded-lg shadow-md border border-gray-200 transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-blue-50 mx-2 my-2">
     <div className="flex flex-col h-full justify-between">
       <div>
         <Typography
           variant="h4"
-          className="text-gray-800 mb-2 font-semibold text-lg sm:text-xl break-words whitespace-normal"
+          className="text-gray-800 mb-1 font-semibold text-base sm:text-lg break-words whitespace-normal"
         >
           {course.name}
         </Typography>
-        <Typography className="text-gray-600 mb-2 text-sm sm:text-base break-words whitespace-normal">
+        <Typography className="text-gray-600 mb-2 text-xs sm:text-sm break-words whitespace-normal">
           {course.institution} • {course.duration}
         </Typography>
       </div>
-      <div className="mt-4">
-        <Progress value={course.progress} className="mb-2" />
-        <Typography className="text-xs sm:text-sm text-gray-500 break-words whitespace-normal">
+      <div className="mt-2">
+        <Progress value={course.progress} className="mb-1" />
+        <Typography className="text-xs text-gray-500 break-words whitespace-normal">
           {course.progress}% Complete
         </Typography>
       </div>
       <div>
         <Typography
           variant="h5"
-          className="text-gray-800 mb-2 font-semibold text-sm sm:text-base break-words whitespace-normal"
+          className="text-gray-800 mb-1 font-semibold text-xs sm:text-sm"
         >
           Skills Gained:
         </Typography>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1 max-w-full overflow-hidden">
           {course.skills.map((skill) => (
             <Tag key={skill} label={skill} />
           ))}
@@ -84,13 +84,12 @@ const CourseSection = () => {
       </div>
 
       <div className="relative py-4 flex items-center">
-        {/* Conditional rendering for buttons based on screen size */}
         <button
           onClick={() => handleScroll("left")}
-          className="hidden sm:flex bg-gradient-to-r from-gray-300 to-gray-400 rounded-full p-3 shadow-lg hover:from-gray-400 hover:to-gray-500 transition-colors duration-300 items-center justify-center z-10"
+          className="hidden sm:flex bg-gradient-to-r from-gray-300 to-gray-400 rounded-full p-2 shadow-lg hover:from-gray-400 hover:to-gray-500 transition-colors duration-300 items-center justify-center z-10 mr-2"
           aria-label="Scroll Left"
         >
-          <FaChevronLeft className="text-gray-700 text-xl" />
+          <FaChevronLeft className="text-gray-700 text-lg" />
         </button>
 
         <div
@@ -106,10 +105,10 @@ const CourseSection = () => {
 
         <button
           onClick={() => handleScroll("right")}
-          className="hidden sm:flex bg-gradient-to-r from-gray-300 to-gray-400 rounded-full p-3 shadow-lg hover:from-gray-400 hover:to-gray-500 transition-colors duration-300 items-center justify-center z-10"
+          className="hidden sm:flex bg-gradient-to-r from-gray-300 to-gray-400 rounded-full p-2 shadow-lg hover:from-gray-400 hover:to-gray-500 transition-colors duration-300 items-center justify-center z-10 ml-2"
           aria-label="Scroll Right"
         >
-          <FaChevronRight className="text-gray-700 text-xl" />
+          <FaChevronRight className="text-gray-700 text-lg" />
         </button>
       </div>
     </Container>

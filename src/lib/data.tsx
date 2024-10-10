@@ -179,27 +179,40 @@ export const FAMILIAR_TECHNOLOGIES: TechDetails[] = [
 ];
 
 export const COURCES: CourceDetails[] = [
-  {
+   {
     id: "cloud",
-    name: "[NEW] Master Microservices with SpringBoot,Docker,Kubernetes",
+    name: "[NEW] Master Microservices with SpringBoot, Docker, Kubernetes",
     institution: "Udemy",
-    duration: "40 hour",
-    progress: Math.round((8 / 19) * 100),
+    duration: "40 hours",
+    progress: Math.round((9 / 19) * 100),
     skills: [
       "Spring Cloud",
       "Docker",
-      "Kibernetes",
+      "Kubernetes",
       "Microservice Architecture",
     ],
   },
   {
-    id: "design-pattern",
-    name: "Ultimate Design Patterns",
+    id: "backend-fundamentals",
+    name: "Fundamentals of Backend Engineering",
     institution: "Udemy",
-    duration: "11 hour",
-    progress: 15,
-    skills: ["Solid Principles", "Design Patterns"],
+    duration: "17 Hour 22 Minute",
+    progress: Math.round((0 / 8) * 100),
+    skills: [
+      "Communication design patterns",
+      "Communication protocols",
+      "Operating System fundamentals",
+      "HTTP/1.1, HTTP/2, HTTP/3",
+    ],
   },
+  // {
+  //   id: "design-pattern",
+  //   name: "Ultimate Design Patterns",
+  //   institution: "Udemy",
+  //   duration: "11 hour",
+  //   progress: 15,
+  //   skills: ["Solid Principles", "Design Patterns"],
+  // },
 ];
 
 export const EXPERIENCES: ExperienceDetails[] = [
