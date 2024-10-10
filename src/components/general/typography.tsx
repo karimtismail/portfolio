@@ -39,9 +39,9 @@ const elementMapping = {
 
 // Define the TypographyProps interface
 interface TypographyProps
-  extends React.HTMLProps<HTMLElement>,
+  extends React.HTMLProps<HTMLElement>, // Allow all HTML element props
     VariantProps<typeof typographyVariants> {
-  component?: React.ElementType<React.HTMLProps<HTMLElement>>;
+  component?: React.ElementType; // Allow custom component type
 }
 
 // Typography component
@@ -50,21 +50,18 @@ const Typography = React.forwardRef<HTMLElement, TypographyProps>(
     { component, className = "", variant = "body2", children, ...props },
     ref
   ) => {
-    // Ensure Comp is typed correctly
-    const Comp = "div"; // or any other HTML element like 'span', 'p', etc.
-
-    const combinedClasses = mergeClasses(
-      typographyVariants({ variant }),
-      className
-    );
-
-    type CompProps = React.ComponentPropsWithoutRef<typeof Comp>;
+    // Determine the component to render
+    const Comp =
+      component ||
+      (elementMapping[
+        variant as keyof typeof elementMapping
+      ] as keyof JSX.IntrinsicElements);
 
     return (
       <Comp
-        className={combinedClasses}
-        ref={ref as React.Ref<any>}
-        {...(props as CompProps)}
+        className={mergeClasses(typographyVariants({ variant }), className)}
+        ref={ref}
+        {...props}
       >
         {children}
       </Comp>

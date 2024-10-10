@@ -179,7 +179,7 @@ export const FAMILIAR_TECHNOLOGIES: TechDetails[] = [
 ];
 
 export const COURCES: CourceDetails[] = [
-   {
+  {
     id: "cloud",
     name: "[NEW] Master Microservices with SpringBoot, Docker, Kubernetes",
     institution: "Udemy",
